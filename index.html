@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мужские стрижки — Нахимовский проспект, 48</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__inner">
+        <a href="#" class="logo">Мужские стрижки</a>
+
+        <button type="button" class="burger" id="burger-btn" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="site-nav">
+            <a href="#services">Цены</a>
+            <a href="#promo">Акция</a>
+            <a href="#map">Карта</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="nav-overlay" id="nav-overlay"></div>
+
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero__content">
+        <span class="hero__badge">Мужские стрижки</span>
+        <h1 class="hero__title">Твоя<br><span class="accent">стрижка.</span><br>Твой стиль.</h1>
+        <p class="hero__text">Мужские стрижки, оформление бороды и аккуратный образ по понятным ценам.</p>
+        <a class="btn" href="tel:+79629821411">Записаться по телефону</a>
+    </div>
+</section>
+
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="section__title">Цены</h2>
+        <div class="services">
+            <div class="card"><h3>Модельная</h3><p>Классическая модельная стрижка.</p><div class="card__price">800 ₽</div></div>
+            <div class="card"><h3>Двумя насадками</h3><p>Быстрая стрижка двумя насадками.</p><div class="card__price">600 ₽</div></div>
+            <div class="card"><h3>Наголо</h3><p>Стрижка машинкой наголо.</p><div class="card__price">300 ₽</div></div>
+            <div class="card"><h3>Одной насадкой + окантовка</h3><p>Стрижка одной насадкой с аккуратной окантовкой.</p><div class="card__price">500 ₽</div></div>
+            <div class="card"><h3>Сложная стрижка</h3><p>Более сложные формы и работа с длиной.</p><div class="card__price">1 000 ₽</div></div>
+            <div class="card"><h3>Оформление бороды</h3><p>Придание формы и аккуратное оформление.</p><div class="card__price">600 ₽</div></div>
+        </div>
+    </div>
+</section>
+
+<section id="promo" class="promo">
+    <div class="container">
+        <h2 class="promo__title">Акция</h2>
+        <p class="promo__text">2-я стрижка БЕСПЛАТНО</p>
+    </div>
+</section>
+
+        <div id="map" class="box box--map">
+            <h3>Как добраться от метро «Нахимовский проспект»</h3>
+            <div class="map-wrap">
+                <iframe
+                    class="map-frame"
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Af167aa49cdafbecd23640d809064ff8beaea334b56b1bc177f93bffeadf5234b&amp;source=constructor"
+                    loading="lazy"
+                    frameborder="0">
+                </iframe>
+            </div>
+        </div>
+
+<section id="contacts" class="section">
+    <div class="container">
+        <h2 class="section__title">Контакты</h2>
+        <div class="info">
+            <div class="box">
+                <h3>📍 Адрес</h3>
+                <p><b>Нахимовский проспект, 48</b><br>Вход через близлежащий проход со стороны дома №50.</p>
+            </div>
+            <div class="box">
+                <h3>📞 Запись</h3>
+                <a class="box__phone" href="tel:+79629821411">+7 (962) 982-14-11</a>
+                <a class="box__phone" href="tel:+79853325141">+7 (985) 332-51-41</a>
+            </div>
+            <div class="box">
+                <h3>🕐 Режим работы</h3>
+                <p><b>Вт, Ср, Чт, Сб, Вс</b><br>10:00–20:30</p>
+            </div>
+            <div class="box">
+                <h3>✂️ Запись по телефону</h3>
+                <p>Позвоните по одному из номеров выше, чтобы уточнить свободное время.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">© 2026 Мужские стрижки · Нахимовский проспект, 48</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var burger = document.getElementById('burger-btn');
+    var nav = document.getElementById('site-nav');
+    var overlay = document.getElementById('nav-overlay');
+    if (!burger || !nav) return;
+
+    function closeMenu() {
+        nav.classList.remove('nav--open');
+        burger.classList.remove('burger--active');
+        overlay.classList.remove('nav-overlay--visible');
+    }
+
+    burger.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('nav--open');
+        burger.classList.toggle('burger--active', isOpen);
+        overlay.classList.toggle('nav-overlay--visible', isOpen);
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+});
+</script>
+</body>
+</html>
